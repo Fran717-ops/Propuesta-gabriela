@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Gabriela ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .main-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            border: 2px solid rgba(255, 182, 193, 0.3);
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .title {
+            font-size: 3em;
+            color: #d63384;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .subtitle {
+            font-size: 1.8em;
+            color: #495057;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .message {
+            font-size: 1.3em;
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .question {
+            font-size: 2.2em;
+            color: #d63384;
+            font-weight: bold;
+            margin-bottom: 40px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-yes {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+        }
+
+        .btn-yes:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(238, 90, 36, 0.4);
+        }
+
+        .btn-no {
+            background: linear-gradient(45deg, #74b9ff, #0984e3);
+            color: white;
+        }
+
+        .btn-no:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(9, 132, 227, 0.4);
+        }
+
+        /* Animaciones de corazones flotantes */
+        .heart {
+            position: fixed;
+            color: #ff6b6b;
+            font-size: 20px;
+            animation: float 6s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Animaciones de flores */
+        .flower {
+            position: fixed;
+            font-size: 25px;
+            animation: flower-float 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Partículas de amor */
+        .love-particle {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: #ff6b6b;
+            border-radius: 50%;
+            animation: particle-float 4s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes flower-float {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0.8);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(50vh) rotate(180deg) scale(1.2);
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg) scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        @keyframes particle-float {
+            0% {
+                transform: translateY(100vh) translateX(0px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        .celebration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ff6b6b;
+            animation: confetti-fall 3s linear infinite;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .success-message {
+            font-size: 2em;
+            color: #28a745;
+            margin-top: 20px;
+            animation: bounce 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-card">
+            <h1 class="title">💕 Gabriela 💕</h1>
+            <h2 class="subtitle">Mi persona especial</h2>
+            <p class="message">
+                Cada día que pasa me doy cuenta de lo especial que eres para mí. 
+                Tu sonrisa ilumina mis días y tu presencia hace que todo sea mejor. 
+                Quiero compartir más momentos contigo, crear recuerdos juntos y 
+                caminar de la mano hacia el futuro.
+            </p>
+            <div class="question">
+                ¿Quieres ser mi novia? 💖
+            </div>
+            <div class="buttons">
+                <button class="btn btn-yes" onclick="handleYes()">¡Sí! 💕</button>
+                <button class="btn btn-no" onclick="handleNo()">Déjame pensarlo 💭</button>
+            </div>
+            <div id="success-msg" class="success-message hidden">
+                ¡Eres increíble! 🎉💕 ¡Hagamos que esto sea el inicio de algo hermoso!
+            </div>
+        </div>
+    </div>
+
+    <div id="celebration" class="celebration hidden"></div>
+
+    <script>
+        // Crear corazones flotantes
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+
+        // Crear flores flotantes
+        function createFlower() {
+            const flowers = ['🌸', '🌺', '🌻', '🌷', '🌹', '💐'];
+            const flower = document.createElement('div');
+            flower.className = 'flower';
+            flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+            flower.style.left = Math.random() * 100 + 'vw';
+            flower.style.animationDuration = (Math.random() * 3 + 6) + 's';
+            flower.style.animationDelay = Math.random() * 3 + 's';
+            document.body.appendChild(flower);
+
+            setTimeout(() => {
+                flower.remove();
+            }, 10000);
+        }
+
+        // Crear partículas de amor
+        function createLoveParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'love-particle';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            particle.style.background = `hsl(${Math.random() * 60 + 320}, 70%, 60%)`;
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 5000);
+        }
+
+        // Crear confeti
+        function createConfetti() {
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7', '#dda0dd'];
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.animationDelay = Math.random() * 3 + 's';
+            document.getElementById('celebration').appendChild(confetti);
+
+            setTimeout(() => {
+                confetti.remove();
+            }, 3000);
+        }
+
+        function handleYes() {
+            const successMsg = document.getElementById('success-msg');
+            const celebration = document.getElementById('celebration');
+            
+            successMsg.classList.remove('hidden');
+            celebration.classList.remove('hidden');
+            
+            // Crear mucho confeti
+            for (let i = 0; i < 50; i++) {
+                setTimeout(createConfetti, i * 100);
+            }
+            
+            // Ocultar botones
+            document.querySelector('.buttons').style.display = 'none';
+            document.querySelector('.question').innerHTML = '¡Perfecto! 💕✨';
+            
+            // Más corazones y flores
+            for (let i = 0; i < 20; i++) {
+                setTimeout(createHeart, i * 200);
+                setTimeout(createFlower, i * 300);
+            }
+        }
+
+        function handleNo() {
+            alert('¡Está bien! No hay prisa. Cuando estés lista, estaré aquí esperando 😊💕');
+        }
+
+        // Iniciar animaciones
+        setInterval(createHeart, 2000);
+        setInterval(createFlower, 3000);
+        setInterval(createLoveParticle, 1500);
+
+        // Crear elementos iniciales
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createHeart, i * 1000);
+            setTimeout(createFlower, i * 1500);
+            setTimeout(createLoveParticle, i * 800);
+        }
+    </script>
+</body>
+</html>
